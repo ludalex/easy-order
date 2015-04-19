@@ -1,0 +1,64 @@
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+      <h4 class="panel-title">
+          <img src="assets/svg/fastfood2.svg" class="food-category-icon" /> Pizza 
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+	    <ul class="list-group">
+		    {{#each food in pizzeriaFoods}}
+		    	<li class="list-group-item">
+              {{food.name}} 
+              <span style="float: right; margin-top: -5px;">
+		    		      <button {{ action 'loadVariantsModal' food }} class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-plus" style="margin-right: 5px;"></span>with variant</button>
+                  <button {{ action 'addFoodToOrder' food }} class="btn btn-sm btn-success btn-add-food" ><span class="glyphicon glyphicon-plus" style="margin-right: 0px;"></span></button>
+              </span>
+		    	</li>
+		    {{/each}}
+	    </ul>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading collapsed" role="tab" id="headingTwo" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+      <h4 class="panel-title">
+         <img src="assets/svg/cutlery22.svg" class="food-category-icon" /> First Course
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+	    <ul class="list-group">
+		    {{#each food in ristoranteFoods}}
+            <li class="list-group-item">
+                {{food.name}} 
+                <span style="float: right; margin-top: -5px;">
+                    <button {{ action 'loadVariantsModal' food }} class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-plus" style="margin-right: 5px;"></span>with variant</button>
+                    <button {{ action 'addFoodToOrder' food }} class="btn btn-sm btn-success btn-add-food" ><span class="glyphicon glyphicon-plus" style="margin-right: 0px;"></span></button>
+                </span>
+            </li>
+	    	{{/each}}
+    	</ul>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading collapsed" role="tab" id="headingThree" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+      <h4 class="panel-title">
+         <img src="assets/svg/drink81.svg" class="food-category-icon" /> Drinks 
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+    	<ul class="list-group">
+		    {{#each food in bevandeFoods}}
+                  <li class="list-group-item">
+                      {{food.name}} 
+                      <span style="float: right; margin-top: -5px;">
+                          <button {{ action 'loadVariantsModal' food }} class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-plus" style="margin-right: 5px;"></span>with variant</button>
+                          <button {{ action 'addFoodToOrder' food }} class="btn btn-sm btn-success btn-add-food" ><span class="glyphicon glyphicon-plus" style="margin-right: 0px;"></span></button>
+                      </span>
+                  </li>
+		    {{/each}}
+		</ul>    
+    </div>
+  </div>
+</div>
